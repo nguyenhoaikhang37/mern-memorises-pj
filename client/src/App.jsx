@@ -28,7 +28,9 @@ function App() {
 
             <Grow in={true}>
                 <Container>
-                    <Grid container justifyContent="space-between" alignItems="stretch" spacing={3}>
+                    <Grid className={classes.mainContainer} container justifyContent="space-between"
+                          alignItems="stretch"
+                          spacing={3}>
                         <Grid item xs={12} md={7}>
                             <Posts setCurrentId={setCurrentId}/>
                         </Grid>
