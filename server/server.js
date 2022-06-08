@@ -15,10 +15,13 @@ app.use(express.urlencoded({limit: '30mb', extended: true}));
 
 // Routes
 app.get('/', (req, res) => {
-    res.send('Memories API is running');
+    res.json({message: 'Memories API is running'});
 });
 app.use('/api/v1/posts', postRoutes);
 
-mongoose.connect(process.env.MONGODB_URL, {useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect('mongodb+srv://khangnguyennhkdev:khangnguyennhkdev123@cluster0.28zhlpb.mongodb.net/memories-pj?retryWrites=true&w=majority', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+})
     .then(() => app.listen(process.env.PORT || 8080, () => console.log(`Server is running on port ${process.env.PORT || 8080}`)))
     .catch((err) => console.log(err.message));
