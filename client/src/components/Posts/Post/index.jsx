@@ -3,7 +3,7 @@ import {Card, CardActions, CardContent, CardMedia, Button, Typography} from '@ma
 import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt';
 import DeleteIcon from '@material-ui/icons/Delete';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
-import * as dayjs from 'dayjs';
+import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import {useDispatch} from 'react-redux';
 
@@ -18,11 +18,11 @@ const Post = ({post, setCurrentId}) => {
 
     const handleLike = () => {
         dispatch(updatePostAction(post._id, {likeCount: post.likeCount + 1}));
-    }
+    };
 
     const handleDelete = () => {
         dispatch(deletePostAction(post._id));
-    }
+    };
 
     return (
         <Card className={classes.card}>
